@@ -1,8 +1,10 @@
 export async function getRecipeFromMistral(ingredientsArr, customRequirement, userServes) {
+
+    const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://127.0.0.1:8000"
     
     // We are now talking to OUR backend, not Hugging Face directly
     try {
-        const response = await fetch("http://127.0.0.1:8000/generate-recipe", {
+        const response = await fetch(`${backendUrl}/generate-recipe`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
