@@ -28,7 +28,7 @@ app = FastAPI() # You are instantiating the application. app is your website.
 
 app.add_middleware(  # Middleware is code that runs on every single request before it reaches your functions. It's like security screening at an airport.
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"], # <--- The URL of your React App
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"], # Allow all types (GET, POST, etc.)
     allow_headers=["*"], # Allow all headers
