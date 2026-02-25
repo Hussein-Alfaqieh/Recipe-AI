@@ -1,0 +1,465 @@
+/* --- Global Resets & Typography --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #F3F4F6; /* Cool light gray background */
+    color: #1F2937;
+}
+
+/* --- Header Design --- */
+header {
+    display: flex;
+    /* This pushes the Logo to the left and Button to the right */
+    justify-content: space-between; 
+    align-items: center;
+    height: 90px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border-bottom: 3px solid #F97316;
+    padding: 0 40px; /* Adds breathing room on the sides */
+}
+
+/* We need to strip the default link styles (blue underline) from the logo */
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.my-recipes-btn {
+    background-color: #F3F4F6;
+    color: #374151;
+    border: 1px solid #D1D5DB;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.my-recipes-btn:hover {
+    background-color: #E5E7EB;
+    color: #111827;
+}
+/* --- Main Layout --- */
+main {
+    max-width: 800px; /* Limits width for better readability */
+    margin: 40px auto; /* Centers the main card */
+    padding: 40px;
+    background: #FFFFFF;
+    border-radius: 16px; /* Card look */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Form Container --- */
+.user-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #E5E7EB; /* Separator line */
+}
+
+/* --- Individual Form Styling --- */
+.add-ingredient-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 550px;
+    gap: 8px;
+}
+
+.add-ingredient-form > label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    color: #6B7280; /* Muted gray for labels */
+    margin-left: 4px;
+}
+
+/* --- Input Row (Keeps Input & Button aligned) --- */
+.input-row {
+    display: flex;
+    gap: 12px;
+}
+
+.input-row > input {
+    flex-grow: 1;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 2px solid #E5E7EB;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background-color: #F9FAFB;
+}
+
+.input-row > input:focus {
+    outline: none;
+    border-color: #F97316; /* Orange focus ring */
+    background-color: #FFF;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+/* --- Buttons --- */
+.input-row > button {
+    background-color: #111827; /* Dark black/blue */
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 0 24px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: transform 0.1s ease, background-color 0.2s;
+    white-space: nowrap;
+}
+
+.input-row > button:hover {
+    background-color: #000;
+    transform: translateY(-1px);
+}
+
+.input-row > button:active {
+    transform: translateY(0);
+}
+
+/* --- Badges for Servings & Custom Tags --- */
+main > h2 {
+    font-size: 0.95rem;          
+    font-weight: 600;           
+    font-family: 'Inter', sans-serif;
+    background-color: #FFF7ED;  /* Very light cream/orange background */
+    color: #7C2D12;             /* Dark rust orange text */
+    border: 1px solid #FFEDD5;  /* Subtle peach border */
+    padding: 8px 20px;          /* Space inside the badge */
+    border-radius: 50px;        /* Pill shape */
+    display: inline-block;      /* Sit side-by-side */
+    margin: 10px 10px 20px 0;   
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* --- Ingredients List (Vertical List Layout) --- */
+ul.ingredients-list {
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    gap: 12px;              /* Space between rows */
+    padding: 0;
+    margin-bottom: 40px;
+    list-style: none;
+}
+
+ul.ingredients-list > li {
+    display: flex;
+    justify-content: space-between; /* Pushes button to far right */
+    align-items: center;
+    background-color: #F9FAFB;      /* Very light gray row */
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+    color: #374151;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03); /* Subtle depth */
+}
+
+/* --- The Remove Button --- */
+.remove-button {
+    background-color: transparent;
+    border: none;
+    color: #9CA3AF;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.remove-button:hover {
+    background-color: #FEE2E2; /* Light red background */
+    color: #DC2626;            /* Red text */
+}
+
+/* --- Get Recipe Section --- */
+.get-recipe-container {
+    background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+    padding: 24px 32px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.get-recipe-container h3 {
+    margin: 0 0 4px 0;
+    color: #9A3412;
+    font-size: 1.2rem;
+}
+
+.get-recipe-container p {
+    margin: 0;
+    color: #C2410C;
+    font-size: 0.9rem;
+}
+
+.get-recipe-container button {
+    background-color: #F97316; /* Bright Orange */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(249, 115, 22, 0.4);
+    transition: all 0.2s;
+}
+
+.get-recipe-container button:hover {
+    background-color: #EA580C;
+    box-shadow: 0 6px 8px -1px rgba(249, 115, 22, 0.5);
+}
+
+/* --- Recipe Output Area --- */
+.suggested-recipe-container {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px dashed #E5E7EB;
+    line-height: 1.7;
+    color: #374151;
+}
+
+/* --- Utilities --- */
+.error-message {
+    color: #DC2626;
+    background-color: #FEE2E2;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+
+  /* Auth Styles */
+/* --- Authentication Screens --- */
+
+/* Centers the card in the middle of the viewport */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* The Login Card */
+.form-card {
+    background: #FFFFFF;
+    padding: 40px 32px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.form-card h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #111827;
+    font-size: 1.8rem;
+}
+
+.form-card p {
+    color: #6B7280;
+    margin-bottom: 32px;
+}
+
+/* Auth Inputs */
+.form-card input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #F9FAFB;
+    transition: all 0.2s;
+}
+
+.form-card input:focus {
+    outline: none;
+    border-color: #F97316; /* Chef Claude Orange */
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+    background-color: #FFF;
+}
+
+/* Buttons Container */
+.auth-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+/* Primary Button (Log In) */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #111827;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #000;
+}
+
+.submit-btn:disabled {
+    background-color: #9CA3AF;
+    cursor: not-allowed;
+}
+
+/* Secondary Button (Sign Up) */
+.secondary-btn {
+    background-color: #FFF;
+    color: #374151;
+    border: 1px solid #D1D5DB;
+}
+
+.secondary-btn:hover {
+    background-color: #F3F4F6;
+    border-color: #9CA3AF;
+    color: #111827;
+}
+
+/* ========================================= */
+/* FAVORITES PAGE STYLING           */
+/* ========================================= */
+
+/* 1. The Container */
+.favorites-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* 2. The "Back" Link */
+.back-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #6B7280;
+    font-weight: 600;
+    margin-bottom: 24px;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #111827;
+}
+
+/* 3. The Grid Layout */
+.favorites-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* 4. The Accordion Card (<details>) */
+details.recipe-card {
+    background: #FFFFFF;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    overflow: hidden; /* Keeps content inside rounded corners */
+    transition: all 0.2s ease;
+}
+
+details.recipe-card[open] {
+    box-shadow: 0 8px 16px -4px rgba(0,0,0,0.1);
+    border-color: #F97316; /* Orange border when open */
+}
+
+/* 5. The Clickable Header (<summary>) */
+summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes Delete button to the right */
+    padding: 16px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #374151;
+    list-style: none; /* Hides default triangle in some browsers */
+}
+
+summary:hover {
+    background-color: #F9FAFB;
+}
+
+/* Custom styling for the Delete button inside the summary */
+summary > button {
+    background-color: transparent;
+    border: 1px solid #FECACA;
+    color: #DC2626;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+summary > button:hover {
+    background-color: #DC2626;
+    color: white;
+}
+
+/* 6. The Hidden Content (Markdown area) */
+.recipe-content {
+    padding: 20px 30px;
+    background-color: #FFF;
+    border-top: 1px solid #E5E7EB;
+    color: #4B5563;
+    line-height: 1.6;
+}
+
+
+/* The Sign Out Button Styling */
+.sign-out-btn {
+    background-color: transparent;
+    border: 1px solid #E5E7EB;
+    color: #6B7280; /* Gray text (visible!) */
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sign-out-btn:hover {
+    border-color: #F97316;
+    color: #F97316; /* Orange text on hover */
+    background-color: #FFF7ED;
+}

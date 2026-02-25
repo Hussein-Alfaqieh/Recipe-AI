@@ -1,0 +1,215 @@
+
+/* --- Global Resets & Typography --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #F3F4F6; /* Cool light gray background */
+    color: #1F2937;
+}
+
+/* --- Header Design --- */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    height: 90px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border-bottom: 3px solid #F97316; /* Pop of orange color */
+}
+
+header > img {
+    width: 45px;
+}
+
+header > h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: -0.5px;
+}
+
+/* --- Main Layout --- */
+main {
+    max-width: 800px; /* Limits width for better readability */
+    margin: 40px auto; /* Centers the main card */
+    padding: 40px;
+    background: #FFFFFF;
+    border-radius: 16px; /* Card look */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Form Container --- */
+.user-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #E5E7EB; /* Separator line */
+}
+
+/* --- Individual Form Styling --- */
+.add-ingredient-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 550px;
+    gap: 8px;
+}
+
+.add-ingredient-form > label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    color: #6B7280; /* Muted gray for labels */
+    margin-left: 4px;
+}
+
+/* --- Input Row & Inputs --- */
+.input-row {
+    display: flex;
+    gap: 12px;
+}
+
+.input-row > input {
+    flex-grow: 1;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 2px solid #E5E7EB;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background-color: #F9FAFB;
+}
+
+.input-row > input:focus {
+    outline: none;
+    border-color: #F97316; /* Orange focus ring */
+    background-color: #FFF;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+/* --- Buttons --- */
+.input-row > button {
+    background-color: #111827; /* Dark black/blue */
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 0 24px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: transform 0.1s ease, background-color 0.2s;
+}
+
+.input-row > button:hover {
+    background-color: #000;
+    transform: translateY(-1px);
+}
+
+.input-row > button:active {
+    transform: translateY(0);
+}
+
+/* --- Styling those "H2" tags for Custom/Servings --- */
+/* Your React code uses <h2> for feedback. We style them to look like badges. */
+main > h2 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-color: #FFF7ED; /* Light orange bg */
+    color: #9A3412;            /* Dark orange text */
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #FFEDD5;
+    display: inline-block;     /* Prevents them from being full width */
+    margin: 5px 5px 20px 0;    /* Spacing around them */
+}
+
+/* --- Ingredients List --- */
+ul.ingredients-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    margin-bottom: 40px;
+    list-style: none;
+}
+
+ul.ingredients-list > li {
+    background-color: #F3F4F6;
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: #374151;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* --- Get Recipe Container --- */
+.get-recipe-container {
+    background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+    padding: 24px 32px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.get-recipe-container h3 {
+    margin: 0 0 4px 0;
+    color: #9A3412;
+    font-size: 1.2rem;
+}
+
+.get-recipe-container p {
+    margin: 0;
+    color: #C2410C;
+    font-size: 0.9rem;
+}
+
+.get-recipe-container button {
+    background-color: #F97316; /* Bright Orange */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(249, 115, 22, 0.4);
+    transition: all 0.2s;
+}
+
+.get-recipe-container button:hover {
+    background-color: #EA580C;
+    box-shadow: 0 6px 8px -1px rgba(249, 115, 22, 0.5);
+}
+
+/* --- The Recipe Output --- */
+.suggested-recipe-container {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px dashed #E5E7EB;
+    line-height: 1.7;
+    color: #374151;
+}
+
+/* --- Error Message --- */
+.error-message {
+    color: #DC2626;
+    background-color: #FEE2E2;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+
+
