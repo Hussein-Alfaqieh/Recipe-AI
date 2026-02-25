@@ -19,7 +19,7 @@ HF_TOKEN = os.getenv("HF_ACCESS_TOKEN") # Python asks the computer: "Do you have
 if not HF_TOKEN:
     raise ValueError("HF_ACCESS_TOKEN is missing. Check your .env file.")
 
-client = InferenceClient(api_key=HF_TOKEN) # We turn on the AI connection. We give it our ID card (the Token). Now, anytime we use client, it knows who we are.
+client = InferenceClient(token=HF_TOKEN) # Changed api_key to token # We turn on the AI connection. We give it our ID card (the Token). Now, anytime we use client, it knows who we are.
 
 
 
